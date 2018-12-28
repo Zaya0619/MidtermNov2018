@@ -6,7 +6,7 @@ public abstract class EmployeeAbstract implements Employee {
 
     public abstract void createCompany();
 
-    public abstract void createCompany(String Vision);
+    public abstract void createCompany(String "Vision");
 
 
 }
