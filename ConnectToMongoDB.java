@@ -28,15 +28,21 @@ public class ConnectToMongoDB {
         return mongoDatabase;
     }
 
-    public static String insertIntoToMongoDB(User user){
+    public static String insertIntoToMongoDB(User user) {
         String profile = user.getStName();
         MongoDatabase mongoDatabase = connectToMongoDB();
         MongoCollection<Document> collection = mongoDatabase.getCollection("profile");
-        Document document = new Document().append("stName",user.getStName()).append("stID", user.getStID()).
-                append("stDOB",user.getStDOB());
+        Document document = new Document().append("stName", user.getStName()).append("stID", user.getStID()).
+                append("stDOB", user.getStDOB());
         collection.insertOne(document);
         return profile + " has been registered";
     }
+
+    public static void readDataBase(String employee_record, String employee_id, String employee_info) {
+
+    }
+
+
 
     public String insertIntoMongoDB(List<Student> student,String profileName){
         MongoDatabase mongoDatabase = connectToMongoDB();
@@ -104,4 +110,11 @@ public class ConnectToMongoDB {
             System.out.println(person.getStName()+ " "+ person.getStID());
         }
     }
+
+    public void insertDataFromArrayListToMongoDB(ArrayList<String> student, String employee, String name) {
+    }
+
+    public void insertIntoMongoDB(String employees, String employeeName, String employeeID, String employeeAge, String employeeSalary, String employeeNumberOfYearsWithCompany) {
+    }
 }
+
